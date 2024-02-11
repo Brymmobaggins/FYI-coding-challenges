@@ -1,22 +1,27 @@
+const displayTime = document.getElementById('display-time')
+const displayDate = document.getElementById('display-date')
 
-const time = document.getElementById('time')
+let now = new Date()
+displayTime.textContent = String(now.toLocaleTimeString()).slice(0, -3)
 
-// function TimeAndDate() {
-//     const currentTime = new Date()
-//     currentTime.innertext = time
+// get date
+let date = now.getDate()
 
-//     const currentDate = 
+// Get the year
+const daysInWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+let DD = now.getDay()
+let dayName = daysInWeek[DD]
 
-    
+// Get the Month
+const monthsInYear = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+let MM = now.getMonth()
+let monthName = monthsInYear[MM]
 
-// }
+// get the year
+let year = now.getFullYear()
 
-let today = new Date()
+let currentDate = dayName + ", " + monthName + " " + date + ", " + year
+displayDate.textContent = currentDate
+console.log(currentDate)
 
-const todayTime = today.toLocaleTimeString()
-const dd = today.getDay()
-const month = today.getMonth()
-const year = today.getFullYear()
-// console.log(dd)
-today = dd + month + year
-console.log(today)
+
